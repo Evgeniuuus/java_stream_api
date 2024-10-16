@@ -1,7 +1,6 @@
 package org.example;
 
 import com.google.gson.annotations.SerializedName;
-import lombok.Data;
 import lombok.Getter;
 
 @Getter
