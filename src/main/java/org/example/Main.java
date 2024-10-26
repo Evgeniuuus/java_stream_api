@@ -21,14 +21,13 @@ public class Main {
         }
 
         if (data_Visitors != null) {
-// Задание 1
             System.out.println("------------------------Задание 1------------------------");
             data_Visitors.stream()
                     .map(visitor -> visitor.getFirstName() + " " + visitor.getLastName())
                     .forEach(System.out::println);
             System.out.println("Всего посетителей: " + data_Visitors.size());
 
-// Задание 2
+
             System.out.println("\n------------------------Задание 2------------------------");
             data_Visitors.stream()
                     .flatMap(visitor -> visitor.getFavoriteBooks().stream())
@@ -43,7 +42,7 @@ public class Main {
                     .count();
             System.out.println("Всего уникальных книг: " + uniqueBooksCount);
 
-// Задание 3
+
             System.out.println("\n------------------------Задание 3------------------------");
             data_Visitors.stream()
                     .flatMap(visitor -> visitor.getFavoriteBooks().stream())
@@ -53,7 +52,7 @@ public class Main {
                             book.getTitle(), book.getAuthor(), book.getYear(), book.getIsbn(), book.getPublisher()))
                     .forEach(System.out::println);
 
-// Задание 4
+
             System.out.println("\n------------------------Задание 4------------------------");
             boolean hasAuthor = data_Visitors.stream()
                     .flatMap(visitor -> visitor.getFavoriteBooks().stream())
@@ -64,7 +63,7 @@ public class Main {
                 System.out.println("Книг данного автора нет у посетителей в избранном");
             }
 
-// Задание 5
+
             System.out.println("\n------------------------Задание 5------------------------");
             int maxFavoriteBooks = data_Visitors.stream()
                     .map(visitor -> visitor.getFavoriteBooks().size())
@@ -72,7 +71,7 @@ public class Main {
                     .orElse(0);
             System.out.println("Максимальное кол-во книг в избранном: " + maxFavoriteBooks);
 
-// Задание 6
+
             System.out.println("\n------------------------Задание 6------------------------");
             double averageBooks = data_Visitors.stream()
                     .mapToInt(visitor -> visitor.getFavoriteBooks().size())
